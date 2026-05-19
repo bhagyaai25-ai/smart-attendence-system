@@ -1,0 +1,29 @@
+attendence={}
+while True:
+    print("____smart attendence system____")
+    print("1.mark attendence")
+    print("2.view attendence")
+    print("3.search student")
+    print("4.exit")
+    choice=int(input("enter your choice: "))
+    if choice==1:
+        name=input("enter the student name: ")
+        status=int(input("enter the student roll number to mark the attendence: "))
+        attendence[name]=status
+        print("attendence marked succussfully")
+    elif choice==2:
+        if len(attendence)==0:
+            print("no student registration done")
+        else:
+            for name,status in attendence.items():
+                print(name,":",status)
+    elif choice==3:
+        search=input("enter the student name to search the student in list: ")
+        if search in attendence:
+            print(search,"is",attendence[search])
+        else:
+            print("no student is found on given name")
+    elif choice==4:
+        print("program ended succussfully")
+    else:
+        print("invalid input")
